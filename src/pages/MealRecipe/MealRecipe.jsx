@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Preloader from '../../components/Preloader/Preloader';
 import { getMealById } from '../../api';
 import { useParams } from 'react-router-dom';
+import './MealRecipe.scss';
 
 export default function MealRecipe() {
    const { id } = useParams();
@@ -40,7 +41,7 @@ export default function MealRecipe() {
       strArea,
       strInstructions,
       strMealThumb,
-      strYoutube,
+      //   strYoutube,
    } = meal;
    return (
       <div>
@@ -48,23 +49,33 @@ export default function MealRecipe() {
             <Preloader />
          ) : (
             <div className="MealRecipe" id={idMeal}>
-               <h1>{strMeal}</h1>
-               <img
-                  src={strMealThumb}
-                  alt={strMeal}
-                  height="200px"
-                  width="200px"
-               />
-               <h3>{strCategory}</h3>
-               <h4>{strArea}</h4>
-               <p>{strInstructions}</p>
-               <ul>
-                  {ingredients.map((ingredient, id) => (
-                     <li>
-                        {ingredient} : {measures[id]}
-                     </li>
-                  ))}
-               </ul>
+               <img src={strMealThumb} alt={strMeal} />
+               <div className="MealRecipe-info">
+                  <h1>{strMeal}</h1>
+                  <h3>
+                     <span>CATEGORY: </span>
+                     {strCategory}
+                  </h3>
+                  <h3>
+                     <span>AREA: </span>
+                     {strArea}
+                  </h3>
+                  <ul>
+                     <span>INGREDIENTS: </span>
+                     {ingredients.map((ingredient, id) => (
+                        <li>
+                           <h4>
+                              {ingredient} : <span>{measures[id]}</span>
+                           </h4>
+                        </li>
+                     ))}
+                  </ul>
+                  <p>
+                     <span>INSTRUCTION: </span> <br />
+                     {strInstructions}
+                  </p>
+               </div>
+
                {/* <iframe
                   src={strYoutube}
                   frameborder="0"

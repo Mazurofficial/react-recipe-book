@@ -1,0 +1,71 @@
+.MealRecipe {
+    display: flex;
+    padding: 70px 100px;
+
+    img {
+        width: 400px;
+        height: 400px;
+        border-radius: 5px;
+    }
+
+    &-info {
+        margin-left: 30px;
+    }
+
+    span {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+        text-align: center;
+        letter-spacing: 0.2em;
+
+        color: #000000;
+
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 23px;
+        margin-bottom: 20px;
+
+        color: #000000;
+    }
+
+    ul {
+        list-style: none;
+        margin-bottom: 20px;
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        h4 {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 23px;
+
+            color: #000000;
+
+            span {
+                font-weight: 500;
+                font-size: 20px;
+                letter-spacing: 0;
+            }
+        }
+    }
+
+    p {
+        width: 70%;
+    }
+}
