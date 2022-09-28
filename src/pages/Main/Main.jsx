@@ -14,7 +14,6 @@ export default function Main() {
 
    return (
       <>
-         {console.log(catalog)}
          {!catalog.length ? <Preloader /> : <CategoryList catalog={catalog} />}
       </>
    );

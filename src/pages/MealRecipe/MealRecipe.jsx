@@ -19,14 +19,18 @@ export default function MealRecipe() {
          const newIngredients = [];
          const newMeasures = [];
          for (const [key, value] of Object.entries(recipe)) {
-            if (key.includes('strIngredient') && value !== '') {
+            if (
+               key.includes('strIngredient') &&
+               value !== '' &&
+               value !== null
+            ) {
                ingredientsCount = ingredientsCount + 1;
                newIngredients.push(value);
             }
          }
          setIngredients(newIngredients);
          for (const [key, value] of Object.entries(recipe)) {
-            if (key.includes('strMeasure') && value !== '') {
+            if (key.includes('strMeasure') && value !== '' && value !== null) {
                newMeasures.push(value);
             }
          }
