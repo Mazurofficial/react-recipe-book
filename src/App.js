@@ -12,7 +12,7 @@ function App() {
    return (
       <div className="App">
          <Header />
-         <Routes>
+         <Routes baseline="/react-recipe-book">
             <Route exact path="/" element={<Main />} />
             <Route path="/category/:name" element={<Category />} />
             <Route path="/searchedMeal/:name" element={<SearchedMeal />} />
