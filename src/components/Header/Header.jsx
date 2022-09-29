@@ -1,4 +1,5 @@
 import React from 'react';
+import Search from '../Search/Search';
 import './Header.scss';
 
 export default function Header() {
@@ -7,7 +8,7 @@ export default function Header() {
          <a href="/" className="Header-logo">
             Recipe-Book
          </a>
-         <nav></nav>
+         <Search />
       </header>
    );
 }

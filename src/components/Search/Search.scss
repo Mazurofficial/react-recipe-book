@@ -1,0 +1,19 @@
+.Search {
+    input {
+        font-size: 14px;
+        padding: 10px;
+        border: none;
+    }
+
+    a {
+        font-size: 14px;
+        padding: 10px;
+        background-color: #000;
+        color: #fff;
+        transition: .3s ease-in-out;
+    }
+
+    a:hover {
+        background-color: rgb(54, 54, 54);
+    }
+}

@@ -13,7 +13,6 @@ export default function MealRecipe() {
    useEffect(() => {
       getMealById(id).then((data) => {
          const recipe = data.meals[0];
-         console.log(recipe);
          setMeal(recipe);
          let ingredientsCount = 0;
          const newIngredients = [];
@@ -45,8 +44,13 @@ export default function MealRecipe() {
       strArea,
       strInstructions,
       strMealThumb,
-      //   strYoutube,
+      strYoutube,
    } = meal;
+
+   const YT_LINK =
+      'https://www.youtube.com/embed/' +
+      (strYoutube ? strYoutube.slice(-11) : '');
+
    return (
       <div>
          {!meal ? (
@@ -56,35 +60,37 @@ export default function MealRecipe() {
                <img src={strMealThumb} alt={strMeal} />
                <div className="MealRecipe-info">
                   <h1>{strMeal}</h1>
-                  <h3>
-                     <span>CATEGORY: </span>
-                     {strCategory}
-                  </h3>
-                  <h3>
-                     <span>AREA: </span>
-                     {strArea}
-                  </h3>
-                  <ul>
-                     <span>INGREDIENTS: </span>
-                     {ingredients.map((ingredient, id) => (
-                        <li>
-                           <h4>
-                              {ingredient} : <span>{measures[id]}</span>
-                           </h4>
-                        </li>
-                     ))}
-                  </ul>
-                  <p>
-                     <span>INSTRUCTION: </span> <br />
-                     {strInstructions}
-                  </p>
+                  <div className="MealRecipe-info-category">
+                     <h3>CATEGORY: </h3>
+                     <h4>{strCategory}</h4>
+                  </div>
+                  <div className="MealRecipe-info-area">
+                     <h3>AREA: </h3>
+                     <h4>{strArea}</h4>
+                  </div>
+                  <div className="MealRecipe-info-ingredients">
+                     <h3>INGREDIENTS: </h3>
+                     <ul>
+                        {ingredients.map((ingredient, id) => (
+                           <li>
+                              <h4>
+                                 {ingredient} : <span>{measures[id]}</span>
+                              </h4>
+                           </li>
+                        ))}
+                     </ul>
+                  </div>
+                  <div className="MealRecipe-info-instruction">
+                     <h3>INSTRUCTION: </h3>
+                     <p>{strInstructions}</p>
+                  </div>
+                  {strYoutube && (
+                     <div className="MealRecipe-info-video">
+                        <h3>VIDEO RECIPE: </h3>
+                        <iframe src={YT_LINK} title={strMeal}></iframe>
+                     </div>
+                  )}
                </div>
-
-               {/* <iframe
-                  src={strYoutube}
-                  frameborder="0"
-                  title={strMeal}
-               ></iframe> */}
             </div>
          )}
       </div>

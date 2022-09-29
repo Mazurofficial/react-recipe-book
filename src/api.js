@@ -5,6 +5,11 @@ const getMealById = async (mealId) => {
    return await response.json();
 };
 
+const getMealByName = async (name) => {
+   const response = await fetch(API_URL + 'search.php?s=' + name);
+   return await response.json();
+};
+
 const getAllCategories = async () => {
    const response = await fetch(API_URL + 'categories.php');
    return await response.json();
@@ -15,4 +20,4 @@ const getFilteredCategory = async (categoryName) => {
    return await response.json();
 };
 
-export { getMealById, getAllCategories, getFilteredCategory };
+export { getMealById, getAllCategories, getFilteredCategory, getMealByName };
