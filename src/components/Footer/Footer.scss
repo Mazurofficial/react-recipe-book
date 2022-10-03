@@ -11,10 +11,19 @@
     &-github {
         color: #fff;
         font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: .2s ease-in-out;
+
+        img {
+            margin-right: 5px;
+            height: 35px;
+            width: 35px;
+        }
     }
 
-    &-github :hover {
-        border-bottom: 2px solid #fff;
+    &-github:hover {
+        transform: scale(0.95);
     }
 }
 
