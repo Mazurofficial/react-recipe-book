@@ -1,4 +1,4 @@
-.Header {
+.Footer {
     box-sizing: border-box;
     width: 100vw;
     padding: 0 100px;
@@ -7,25 +7,26 @@
     align-items: center;
     justify-content: space-between;
     background-color: #FF0000;
-    ;
 
-    &-logo {
-        font-size: 30px;
-        font-weight: bold;
+    &-github {
         color: #fff;
-        text-decoration: none;
+        font-weight: bold;
+    }
+
+    &-github :hover {
+        border-bottom: 2px solid #fff;
     }
 }
 
 @media screen and (max-width:640px) {
-    .Header {
+    .Footer {
         padding: 0 10px;
         justify-content: space-between;
     }
 }
 
 @media screen and (max-width:465px) {
-    .Header {
+    .Footer {
         height: auto;
         padding: 10px;
         flex-direction: column;

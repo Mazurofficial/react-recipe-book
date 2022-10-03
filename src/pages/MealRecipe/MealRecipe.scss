@@ -1,6 +1,7 @@
 .MealRecipe {
     display: flex;
     padding: 70px 100px;
+    min-height: calc(100vh - 160px);
 
     img {
         width: 400px;
@@ -99,4 +100,33 @@
             }
         }
     }
+}
+
+@media screen and (max-width: 768px) {
+    .MealRecipe {
+        flex-direction: column;
+        padding: 30px 10%;
+
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        &-info {
+            margin-left: 0;
+            margin-top: 30px;
+
+            p {
+                width: 100%
+            }
+
+            &-video iframe {
+                width: 100%;
+                min-height: 300px;
+                height: auto;
+            }
+        }
+    }
+
 }
