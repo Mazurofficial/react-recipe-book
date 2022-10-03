@@ -72,7 +72,7 @@ export default function MealRecipe() {
                      <h3>INGREDIENTS: </h3>
                      <ul>
                         {ingredients.map((ingredient, id) => (
-                           <li>
+                           <li key={`${idMeal}/${id}`}>
                               <h4>
                                  {ingredient} : <span>{measures[id]}</span>
                               </h4>
